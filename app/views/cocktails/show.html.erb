@@ -4,9 +4,12 @@
     <p><%= link_to '← Back', cocktails_path %></p>
   </div>
 </div>
-
-<% @cocktail.doses.each do |dose| %>
-  <ul>
-    <li><%= dose.ingredient.name %> | <%= dose.description %></li>
-  </ul>
-<% end %>
+<div class="container cocktail-details">
+  <h2>Ingredients</h2>
+  <% @cocktail.doses.each do |dose| %>
+    <ul>
+      <li><%= dose.ingredient.name %> | <%= dose.description %> <%= link_to '🗑', dose_path(dose), method: :delete, data: { confirm: "REALLY !?!" }%></li>
+    </ul>
+  <% end %>
+  <p class="new-dose"><%= link_to "+", new_cocktail_dose_path(@cocktail) %></p>
+</div>

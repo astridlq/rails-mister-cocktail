@@ -18,3 +18,9 @@
 console.log('Hello World from Webpacker')
 
 import 'bootstrap';
+import { loadDynamicBannerText } from '../components/_banner.js';
+loadDynamicBannerText();
+
+// import 'select2/dist/css/select2.css';
+// import { initSelect2 } from '../components/_init_select2.js';
+// initSelect2();
