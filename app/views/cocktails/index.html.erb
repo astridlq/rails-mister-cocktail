@@ -1,0 +1,21 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/05/22/13/gin-cocktails.jpg?w968h681);">
+  <div class="container">
+    <h1>Cocktails Maker 🍸</h1>
+    <p><%= link_to '+ New Cocktail', new_cocktail_path %></p>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-4">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.chowstatic.com/assets/models/promotions/photos/29495/original/Arnold-Palmer-lemonade-iced-tea-drink-recipe-chowhound.jpg)">
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        <p class="new-dose"><%= link_to '+ New Dose', new_cocktail_dose_path(cocktail) %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+

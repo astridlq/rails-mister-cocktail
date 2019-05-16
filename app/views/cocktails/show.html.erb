@@ -1,0 +1,12 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/05/22/13/gin-cocktails.jpg?w968h681);">
+  <div class="container">
+    <h1><%= @cocktail.name.capitalize %></h1>
+    <p><%= link_to '← Back', cocktails_path %></p>
+  </div>
+</div>
+
+<% @cocktail.doses.each do |dose| %>
+  <ul>
+    <li><%= dose.ingredient.name %> | <%= dose.description %></li>
+  </ul>
+<% end %>
