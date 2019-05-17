@@ -16,7 +16,7 @@
     <% @cocktails.each do |cocktail| %>
     <div class="col-4">
       <% if cocktail.photo.url.nil? %>
-        <% photo_url = "https://www.chowstatic.com/assets/models/promotions/photos/29495/original/Arnold-Palmer-lemonade-iced-tea-drink-recipe-chowhound.jpg" %>
+        <% photo_url = background_image.sample %>
       <% else %>
         <% photo_url = cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>
       <% end %>
