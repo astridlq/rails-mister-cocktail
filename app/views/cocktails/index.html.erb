@@ -5,18 +5,12 @@
   </div>
 </div>
 
-<% background_image = ['https://www.chowstatic.com/assets/models/promotions/photos/29495/original/Arnold-Palmer-lemonade-iced-tea-drink-recipe-chowhound.jpg',
-  'https://boiremixologie.com/files/medias/_imageCarrousel/melondeau_sansalcool.jpg',
-  'https://boiremixologie.com/files/medias/_imageCarrousel/Moscow-Mule.jpg',
-  'https://cdn3.tmbi.com/toh/GoogleImages/Blue-Lagoon-Margaritas_exps47794_SD1785603D2_RMS.jpg',
-  'https://www.seriouseats.com/images/2015/05/20150323-cocktails-vicky-wasik-margarita.jpg'] %>
-
 <div class="container">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
     <div class="col-4">
       <% if cocktail.photo.url.nil? %>
-        <% photo_url = background_image.sample %>
+        <% photo_url = 'https://boiremixologie.com/files/medias/_imageCarrousel/Moscow-Mule.jpg' %>
       <% else %>
         <% photo_url = cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>
       <% end %>

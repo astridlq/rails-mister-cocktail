@@ -5,7 +5,12 @@
   </div>
 </div>
 <div class="container cocktail-details">
-  <img src="<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %>" alt="photo-cocktail">
+  <% if @cocktail.photo.url.nil? %>
+      <% photo_url = cl_image_path "Moscow-Mule_gbhyon", height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <% photo_url = cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %>
+    <% end %>
+  <img src="<%= cl_image_path photo_url %>" alt="photo-cocktail">
   <div class="box-ingredients-details">
   <h2>Ingredients</h2>
   <% @cocktail.doses.each do |dose| %>
