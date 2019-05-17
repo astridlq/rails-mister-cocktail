@@ -18,6 +18,10 @@
   text-decoration: none;
   color: #C4C4C4;
   &:hover {
-    color: black;
+    color: $gray;
   }
+}
+
+.btn-create {
+  background-color: $light-gray;
 }

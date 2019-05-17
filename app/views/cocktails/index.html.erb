@@ -15,7 +15,12 @@
   <div class="row">
     <% @cocktails.each do |cocktail| %>
     <div class="col-4">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= background_image.sample %>)">
+      <% if cocktail.photo.url.nil? %>
+        <% photo_url = "https://www.chowstatic.com/assets/models/promotions/photos/29495/original/Arnold-Palmer-lemonade-iced-tea-drink-recipe-chowhound.jpg" %>
+      <% else %>
+        <% photo_url = cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>
+      <% end %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= photo_url %>)">
         <%= link_to cocktail.name.capitalize, cocktail_path(cocktail) %>
         <!-- <p class="new-dose"><%= link_to '+ Add an ingredient', new_cocktail_dose_path(cocktail) %></p> -->
       </div>
